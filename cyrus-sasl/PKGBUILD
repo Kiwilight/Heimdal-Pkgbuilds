@@ -125,6 +125,7 @@ build() {
       --with-configdir=/etc/sasl2:/etc/sasl:/usr/lib/sasl2 \
       --sysconfdir=/etc \
       --with-devrandom=/dev/urandom
+  echo "#define HAVE_GSS_C_NT_HOSTBASED_SERVICE 1" >> config.h
   make
 }
 
