@@ -15,7 +15,7 @@ url='http://www.isc.org/software/bind/'
 license=('custom:ISC')
 arch=('i686' 'x86_64')
 options=('!makeflags')
-depends=('openssl' 'krb5' 'idnkit')
+depends=('openssl' 'heimdal' 'idnkit')
 source=("http://ftp.isc.org/isc/bind9/${_pkgver}/bind-${_pkgver}.tar.gz"
         'remove-bind.patch')
 sha1sums=('7e6ed6ebc896b1de33a9f440233066c60539de4c'
