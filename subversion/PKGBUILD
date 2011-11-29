@@ -10,7 +10,7 @@ arch=('i686' 'x86_64')
 license=('apache' 'bsd')
 depends=('neon' 'apr-util' 'sqlite3')
 optdepends=('libgnome-keyring' 'kdeutils-kwallet' 'bash-completion: for svn bash completion')
-makedepends=('krb5' 'apache' 'python2' 'perl' 'swig' 'ruby' 'java-runtime' 
+makedepends=('heimdal' 'apache' 'python2' 'perl' 'swig' 'ruby' 'java-runtime' 
              'autoconf' 'db' 'e2fsprogs' 'libgnome-keyring' 'kdelibs')
 backup=('etc/xinetd.d/svn' 'etc/conf.d/svnserve')
 url="http://subversion.apache.org/"
