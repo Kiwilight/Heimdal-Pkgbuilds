@@ -1,10 +1,10 @@
-# $Id: PKGBUILD 146485 2012-01-11 15:22:42Z stephane $
+# $Id: PKGBUILD 153509 2012-03-15 09:58:34Z stephane $
 # Maintainer: Paul Mattal <paul@archlinux.org>
 # Contributor: Jason Chu <jason@archlinux.org>
 
 pkgname=subversion
-pkgver=1.7.2
-pkgrel=2
+pkgver=1.7.4
+pkgrel=1
 pkgdesc="A Modern Concurrent Version Control System"
 arch=('i686' 'x86_64')
 license=('APACHE')
@@ -19,8 +19,8 @@ provides=('svn')
 options=('!makeflags' '!libtool')
 source=(http://apache.mirror.rafal.ca/subversion/$pkgname-$pkgver.tar.bz2{,.asc}
         svnserve svn svnserve.conf subversion.rpath.fix.patch)
-sha1sums=('8c0824aeb7f42da1ff4f7cd296877af7f59812bb'
-          '66293923ddc1b12a43b0e86f6b6a3c23b70df6ae'
+sha1sums=('57a3cd351c1dbedddd020e7a1952df6cd2674527'
+          'eebe0be6d539bf7dc37cf01b3c738072f1d9197b'
           '64ba3e6ebafc08ac62f59d788f7a825fdce69573'
           '73b36c046c09cec2093354911c89e3ba8056af6c'
           'ad117bf3b2a838a9a678a93fd8db1a066ad46c41'
