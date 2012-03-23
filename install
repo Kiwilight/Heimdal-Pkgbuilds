@@ -1,0 +1,26 @@
+#! /bin/bash
+
+# Usage: cd package; ../install package (i686|x86_64) [cleanse]
+
+package="$1"; target="$2"; cleanse="$3"
+
+archive="$package-$(../version)-$target.pkg.tar.xz"
+
+[ -n "$cleanse" ] && rm -rf "$archive" "$signature"
+[ -e "$archive" ] || sudo "../heimdal-$target-build"
+if [ ! -e "$archive" ]; then
+  echo "Error: Could not compile $archive"; exit 1
+fi
+
+signature="$archive.sig"
+
+[ -e "$signature" ] || gpg --detach-sign "$archive"
+if [ ! -e "$signature" ]; then
+  echo "Error: Could not sign $archive"; exit 1
+fi
+
+root="/srv/heimdal/$target"
+database="$root/heimdal.db.tar.gz"
+
+install -Dm644 "$archive" "$signature" "$root"
+repo-add --verify --sign "$database" "$root/$archive"
