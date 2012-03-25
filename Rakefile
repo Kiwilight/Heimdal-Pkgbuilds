@@ -1,16 +1,24 @@
 ARCHITECTURE = %w(x86_64)
 
-def make(name); task name[0], :cleanse do |t, argv|
-  Dir.chdir name[0]
-  ARCHITECTURE.each do |target| name.each do |i|
+def make(name, list); task name, :cleanse do |t, argv|
+  Dir.chdir name
+  ARCHITECTURE.each do |target| list.each do |i|
     argv = [ i, target, argv[:cleanse] ]
     system "../install #{argv.join ' '}"; end; end
   Dir.chdir '..'
 end; end
 
-[ %w(heimdal), %w(cyrus-sasl cyrus-sasl-gssapi),
-  %w(dnsutils), %w(gsasl), %w(heirloom-mailx),
-  %w(kdelibs), %w(libsasl), %w(neon), %w(re-alpine),
-  %w(subversion) ].each do |package|
-  make package
-end
+def define(outline); outline.each do |name, list|
+  make name, list; end; end
+
+define 'heimdal'   => %w(heimdal),
+  'cups'           => %w(libcups),
+  'cyrus-sasl'     => %w(cyrus-sasl cyrus-sasl-gssapi),
+  'dnsutils'       => %w(dnsutils),
+  'gsasl'          => %w(gsasl),
+  'heirloom-mailx' => %w(heirloom-mailx),
+  'kdelibs'        => %w(kdelibs),
+  'libsasl'        => %w(libsasl),
+  'neon'           => %w(neon),
+  're-alpine'      => %w(re-alpine),
+  'subversion'     => %w(subversion)
