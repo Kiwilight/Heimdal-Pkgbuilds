@@ -15,7 +15,7 @@ url='http://www.isc.org/software/bind/'
 license=('custom:ISC')
 arch=('i686' 'x86_64')
 options=('!makeflags' '!libtool')
-depends=('openssl' 'krb5' 'libxml2')
+depends=('openssl' 'heimdal' 'libxml2')
 source=("http://ftp.isc.org/isc/bind9/${_pkgver}/bind-${_pkgver}.tar.gz"
         'root.hint::http://www.internic.net/zones/named.root'
         'remove-tools.patch'

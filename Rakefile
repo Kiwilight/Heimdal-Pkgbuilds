@@ -12,6 +12,7 @@ def define(outline); outline.each do |name, list|
   make name, list; end; end
 
 define 'heimdal'   => %w(heimdal),
+  'bind'           => %w(bind),
   'cups'           => %w(libcups),
   'cyrus-sasl'     => %w(cyrus-sasl cyrus-sasl-gssapi),
   'dnsutils'       => %w(dnsutils),
