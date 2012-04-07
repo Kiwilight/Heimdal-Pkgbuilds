@@ -20,5 +20,6 @@ define 'heimdal'   => %w(heimdal),
   'kdelibs'        => %w(kdelibs),
   'libsasl'        => %w(libsasl),
   'neon'           => %w(neon),
+  'openssh'        => %w(openssh),
   're-alpine'      => %w(re-alpine),
   'subversion'     => %w(subversion)
