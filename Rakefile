@@ -14,6 +14,7 @@ def define(outline); outline.each do |name, list|
 define 'heimdal'   => %w(heimdal),
   'arch'           => %w(arch),
   'audit'          => %w(audit),
+  'autofs'         => %w(autofs),
   'bind'           => %w(bind),
   'cups'           => %w(libcups),
   'cyrus-sasl'     => %w(cyrus-sasl cyrus-sasl-gssapi),

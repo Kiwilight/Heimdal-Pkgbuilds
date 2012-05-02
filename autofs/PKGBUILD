@@ -11,19 +11,21 @@ pkgdesc='A kernel-based automounter for Linux.'
 arch=('i686' 'x86_64')
 url='http://freshmeat.net/projects/autofs'
 license=('GPL2')
-depends=('libldap' 'libxml2' 'krb5')
+depends=('libldap' 'libxml2' 'heimdal')
 backup=('etc/autofs/auto.master'
         'etc/autofs/auto.misc'
         'etc/conf.d/autofs')
 options=(!makeflags)
 install='autofs.install'
 source=("http://www.kernel.org/pub/linux/daemons/${pkgname}/v5/${pkgname}-${pkgver}.tar.bz2"
+        'heimdal.diff'
         "http://www.kernel.org/pub/linux/daemons/${pkgname}/v5/patches-5.0.7/${pkgname}-${pkgver}-fix-ipv6-name-for-lookup-fix.patch"
         'autofs'
         'autofs.conf.d'
         'auto.master'
         'auto.misc')
 md5sums=('44cea7f711e2290a0b50fddeda079705'
+         'bb87df48e42f2d3f84364ca45d8bfc53'
          '221bf50d6e496b22014a9a7b234fe556'
          'e307bf6d2638e46eeb916cf42fe029b2'
          '47f597c870410055e0fdb66103daf928'
@@ -32,6 +34,8 @@ md5sums=('44cea7f711e2290a0b50fddeda079705'
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
+
+  patch -p1 -i "$srcdir/heimdal.diff"
 
   sed -i "s:SUBDIRS = lib daemon modules man samples:SUBDIRS = lib daemon modules man:" \
     Makefile.rules
