@@ -29,5 +29,6 @@ define 'heimdal'   => %w(heimdal),
   'mutt'           => %w(mutt),
   'neon'           => %w(neon),
   'openssh'        => %w(openssh),
+  'pam-krb5'       => %w(pam-krb5),
   're-alpine'      => %w(re-alpine),
   'subversion'     => %w(subversion)

@@ -10,7 +10,7 @@ arch=('i686' 'x86_64')
 url='http://www.eyrie.org/~eagle/software/pam-krb5/'
 license=('custom')
 options=('!libtool')
-depends=('krb5' 'pam')
+depends=('heimdal' 'pam')
 source=("http://archives.eyrie.org/software/kerberos/$pkgname-$pkgver.tar.gz")
 md5sums=('5736795225cf7f84718af42a15570fe0')
 
